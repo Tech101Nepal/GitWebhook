@@ -1,0 +1,19 @@
+{
+    "name": "tech101/webhook",
+    "description": "Package for executing based on trigger",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tech101\\Webhook\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+     "extra": {
+        "laravel": {
+            "providers": [
+                "Tech101\\Webhook\\WebhookServiceProvider"
+            ]
+        }
+    }
+}
