@@ -1,7 +1,7 @@
 ## Getting started
-The package can be installed in the followin steps:
+The package can be installed in the following steps:
 
-set the following line in the composer.json:
+Set the following lines in the composer.json:
 ``` bash
     "repositories": [
         {
