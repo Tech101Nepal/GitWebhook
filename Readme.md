@@ -1,22 +1,9 @@
 ## Getting started
 The package can be installed in the following steps:
 
-Set the following lines in the composer.json:
+Install the package with:
 ``` bash
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Tech101Nepal/Webhook.git"
-        }
-    ],
-    "require": {
-        "tech101/webhook": "dev-main"
-    }
-```
-
-Update the composer
-``` bash
-    compsoer update
+    composer require tech101/webhook
 ```
 Publish the provider
 ``` bash
