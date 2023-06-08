@@ -2,6 +2,7 @@
     "name": "tech101/webhook",
     "description": "Package for executing based on trigger",
     "license": "MIT",
+    "type": "package",
     "autoload": {
         "psr-4": {
             "Tech101\\Webhook\\": "src/"
