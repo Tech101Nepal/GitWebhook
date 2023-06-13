@@ -1,6 +1,7 @@
 {
     "name": "tech101/webhook",
     "description": "Package for executing based on trigger",
+    "version": "1.0",
     "license": "MIT",
     "type": "package",
     "autoload": {
@@ -9,7 +10,6 @@
         }
     },
     "minimum-stability": "stable",
-    "version": "1.0",
     "require": {},
      "extra": {
         "laravel": {
