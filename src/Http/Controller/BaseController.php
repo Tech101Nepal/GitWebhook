@@ -73,7 +73,7 @@ class BaseController extends Controller
     protected function checkObjectKind(string $required_kind): void
     {
         if ($this->payload->object_kind != $required_kind) {
-            throw new Exception("Invalid action.", 419);
+            throw new Exception("Invalid action.", 200);
         }
     }
 
@@ -87,7 +87,7 @@ class BaseController extends Controller
     protected function checkObjectState(string $required_state): void
     {
         if ($this->payload->object_attributes->state != $required_state) {
-            throw new Exception("Invalid action.", 419);
+            throw new Exception("Invalid action.", 200);
         }
     }
 }
