@@ -16,6 +16,6 @@ trait LoggingTrait
     public function log(string $message): void
     {
         $log_file = 'git-log-' . date('Y-m-d') . '.log';
-        Log::info($message, ['file' => $log_file]);
+        Log::channel("gitlog")->info($message, ['file' => $log_file]);
     }
 }
