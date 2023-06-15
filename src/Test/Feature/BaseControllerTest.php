@@ -9,6 +9,11 @@ use Tech101\Webhook\Http\Controller\BaseController;
 
 class BaseControllerTest extends BaseTestCase
 {
+    /**
+     * Test request validation with invalid data
+     *
+     * @return void
+     */
     public function testRequestValidationWithInvalidData()
     {
         $baseController = new BaseController();
@@ -21,6 +26,11 @@ class BaseControllerTest extends BaseTestCase
         $method->invoke($baseController, $request);
     }
 
+    /**
+     * Test request validation with valid data
+     *
+     * @return void
+     */
     public function testRequestValidationWithValidData()
     {
         $baseController = new BaseController();
@@ -40,6 +50,11 @@ class BaseControllerTest extends BaseTestCase
         $this->addToAssertionCount(1);
     }
 
+    /**
+     * Test token validation when given invalid token
+     *
+     * @return void
+     */
     public function testTokenValidationWhenGivenInvalidToken()
     {
         $baseController = new BaseController();
@@ -54,6 +69,11 @@ class BaseControllerTest extends BaseTestCase
         $method->invoke($baseController, $request);
     }
 
+    /**
+     * Test token validation when given valid token
+     *
+     * @return void
+     */
     public function testTokenValidationWhenGivenValidToken()
     {
         $baseController = new BaseController();
@@ -72,6 +92,11 @@ class BaseControllerTest extends BaseTestCase
         $this->addToAssertionCount(1);
     }
 
+    /**
+     * Test object kind when given invalid kind from the request
+     *
+     * @return void
+     */
     public function testObjectKindWhenGivenInavlidKindFromTheRequest()
     {
         $baseController = new BaseController();
@@ -88,6 +113,11 @@ class BaseControllerTest extends BaseTestCase
         $method->invoke($baseController, "merge_request", "merge");
     }
 
+    /**
+     * test object kind when given valid kind from the request
+     *
+     * @return void
+     */
     public function testObjectKindWhenGivenValidKindFromTheRequest()
     {
         $baseController = new BaseController();

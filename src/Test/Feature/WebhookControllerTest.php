@@ -9,6 +9,11 @@ use Tech101\Webhook\Http\Controller\WebhookController;
 
 class WebhookControllerTest extends BaseTestCase
 {
+    /**
+     * Test when merge request hook is called with invalid request
+     *
+     * @return void
+     */
     public function testWhenMergeRequestHookIsCalledWithInvalidRequest()
     {
         $webhookController = new WebhookController();
@@ -24,6 +29,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 419);
     }
 
+    /**
+     * Test when merge request hook is called with invalid token
+     *
+     * @return void
+     */
     public function testWhenMergeRequestHookIsCalledWithInvalidToken()
     {
         $webhookController = new WebhookController();
@@ -42,6 +52,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 401);
     }
 
+    /**
+     * Test when merge request hook is called with invalid object kind
+     *
+     * @return void
+     */
     public function testWhenMergeRequestHookIsCalledWithInvalidObjectKind()
     {
         $webhookController = new WebhookController();
@@ -61,6 +76,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 200);
     }
 
+    /**
+     * Test when merge request hook is called with invalid object state
+     *
+     * @return void
+     */
     public function testWhenMergeRequestHookIsCalledWithInvalidObjectState()
     {
         $webhookController = new WebhookController();
@@ -79,6 +99,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 200);
     }
 
+    /**
+     * Test when merge request hook is called with valid request
+     *
+     * @return void
+     */
     public function testWhenMergeRequestHookIsCalledWithValidRequest()
     {
         $webhookController =  new WebhookController();
@@ -96,6 +121,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 200);
     }
 
+    /**
+     * Test when tag push hook is called with invalid request
+     *
+     * @return void
+     */
     public function testWhenTagPushHookIsCalledWithInvalidRequest()
     {
         $webhookController = new WebhookController();
@@ -111,6 +141,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 419);
     }
 
+    /**
+     * Test when tag push hook is called with invalid token
+     *
+     * @return void
+     */
     public function testWhenTagPushHookIsCalledWithInvalidToken()
     {
         $webhookController = new WebhookController();
@@ -129,6 +164,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 401);
     }
 
+    /**
+     * Test when tage push hook is called with invalid object kind
+     *
+     * @return void
+     */
     public function testWhenTagPushHookIsCalledWithInvalidObjectKind()
     {
         $webhookController = new WebhookController();
@@ -148,6 +188,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 200);
     }
 
+    /**
+     * Test when tag push hook is called with valid request
+     *
+     * @return void
+     */
     public function testWhenTagPushHookIsCalledWithValidRequest()
     {
         $webhookController =  new WebhookController();
@@ -165,6 +210,11 @@ class WebhookControllerTest extends BaseTestCase
         $this->assertEquals($result->getStatusCode(), 200);
     }
 
+    /**
+     * Test Ty method
+     *
+     * @return void
+     */
     public function testTy()
     {
         $webhookController = new WebhookController();
