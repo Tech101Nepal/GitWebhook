@@ -1,7 +1,7 @@
 {
     "name": "tech101/webhook",
     "description": "Package for executing based on trigger",
-    "version": "v1.0.2",
+    "version": "dev-main",
     "license": "MIT",
     "type": "package",
     "autoload": {
