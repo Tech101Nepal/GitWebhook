@@ -87,7 +87,7 @@ class BaseController extends Controller
     protected function checkObjectState(string $required_state): void
     {
         if ($this->payload->object_attributes->state != $required_state) {
-            throw new Exception("Invalid state. Expected " . $required_state . " but found " . $this->payload->object_attribute->state, 200);
+            throw new Exception("Invalid state. Expected " . $required_state . " but found " . $this->payload->object_attributes->state, 200);
         }
     }
 }
