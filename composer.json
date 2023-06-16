@@ -10,12 +10,14 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {},
-     "extra": {
+    "extra": {
         "laravel": {
             "providers": [
                 "Tech101\\Webhook\\WebhookServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.5"
     }
 }

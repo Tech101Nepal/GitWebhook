@@ -2,10 +2,13 @@
 
 namespace Tech101\Webhook\Test;
 
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\TestCase;
+use Tech101\Webhook\src\Test\CreatesApplication;
 
 class BaseTestCase extends TestCase
 {
+    use CreatesApplication;
+
     public function getProtectedMethod(string $className, string $methodName)
     {
         $class = new \ReflectionClass($className);
