@@ -6,7 +6,7 @@
 >
     <testsuites>
         <testsuite name="tests">
-            <directory suffix="Test.php">package/webhook/src/Test/Feature</directory>
+            <directory suffix="Test.php">src/Test/Feature</directory>
         </testsuite>
     </testsuites>
     <php>
