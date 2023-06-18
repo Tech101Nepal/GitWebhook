@@ -5,7 +5,7 @@ namespace Tech101\Webhook\Http\Controller;
 use Exception;
 use Illuminate\Http\Request;
 use Tech101\Webhook\Service\Git;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 
 class BaseController extends Controller
 {
