@@ -13,4 +13,10 @@
         <env name="GITLAB_WEBHOOK_TOKEN" value="token"/>
         <env name="DEFAULT_BRANCH" value="main"/>
     </php>
+    <coverage>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </coverage>
+
 </phpunit>
