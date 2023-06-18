@@ -19,5 +19,8 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.5"
+    },
+    "require": {
+        "laravel/framework": "^10.13"
     }
 }
