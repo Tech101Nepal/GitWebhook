@@ -1,6 +1,6 @@
 <?php
 
-namespace Tech101\Webhook\Test\Feature;
+namespace Tech101\Webhook\Test\Unit;
 
 use Illuminate\Http\Request;
 use Tech101\Webhook\factories\GitlabRequestFactory;
