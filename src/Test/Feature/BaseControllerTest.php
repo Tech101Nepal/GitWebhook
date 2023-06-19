@@ -41,12 +41,7 @@ class BaseControllerTest extends BaseTestCase
 
         $method = $this->getProtectedMethod(BaseController::class, "validateRequest");
 
-        try {
-            $method->invoke($baseController, $request);
-        } catch (\Exception $exception) {
-            $this->fail('Exception was thrown: ' . $exception->getMessage());
-        }
-
+        $method->invoke($baseController, $request);
         $this->addToAssertionCount(1);
     }
 
@@ -83,12 +78,7 @@ class BaseControllerTest extends BaseTestCase
 
         $method = $this->getProtectedMethod(BaseController::class, "validateToken");
 
-        try {
-            $method->invoke($baseController, $request);
-        } catch (\Exception $exception) {
-            $this->fail('Exception was thrown: ' . $exception->getMessage());
-        }
-
+        $method->invoke($baseController, $request);
         $this->addToAssertionCount(1);
     }
 
@@ -129,12 +119,7 @@ class BaseControllerTest extends BaseTestCase
 
         $method = $this->getProtectedMethod(BaseController::class, "checkObjectKind");
 
-        try {
-            $method->invoke($baseController, "merge_request");
-        } catch (\Exception $exception) {
-            $this->fail('Exception was thrown: ' . $exception->getMessage());
-        }
-
+        $method->invoke($baseController, "merge_request");
         $this->addToAssertionCount(1);
     }
 }
