@@ -2,19 +2,8 @@
 
 namespace Tech101\Webhook\factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-
-class GitlabRequestFactory extends Factory
+class GitlabRequestFactory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): void
-    {
-    }
-
     public function mergeRequestData($object_kind, $state): array
     {
         return [
