@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
->
-    <testsuites>
-        <testsuite name="tests">
-            <directory suffix="Test.php">src/Test/Feature</directory>
-            <directory suffix="Test.php">src/Test/Unit</directory>
-        </testsuite>
-    </testsuites>
-    <php>
-        <env name="GITLAB_WEBHOOK_TOKEN" value="token"/>
-        <env name="DEFAULT_BRANCH" value="main"/>
-    </php>
-    <coverage>
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
-    </coverage>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
+  <testsuites>
+    <testsuite name="tests">
+      <directory suffix="Test.php">src/Test/Feature</directory>
+      <directory suffix="Test.php">src/Test/Unit</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="GITLAB_WEBHOOK_TOKEN" value="token"/>
+    <env name="DEFAULT_BRANCH" value="main"/>
+  </php>
+  <coverage/>
+  <source>
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+  </source>
 </phpunit>
