@@ -19,3 +19,9 @@ jobs:
     
     - name: checking composer
       run: composer --version
+    
+    - name: installing composer dependencies
+      run: composer install
+      
+    - name: running unit test on the package
+      run: ./vendor/bin/phpunit
