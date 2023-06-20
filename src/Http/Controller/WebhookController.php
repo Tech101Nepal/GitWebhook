@@ -1,12 +1,12 @@
 <?php
 
-namespace Tech101\Webhook\Http\Controller;
+namespace Tech101\GitWebhook\Http\Controller;
 
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Tech101\Webhook\Traits\ApiResponse;
-use Tech101\Webhook\Http\Controller\BaseController;
+use Tech101\GitWebhook\Traits\ApiResponse;
+use Tech101\GitWebhook\Http\Controller\BaseController;
 
 class WebhookController extends BaseController
 {

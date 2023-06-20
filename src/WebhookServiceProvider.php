@@ -1,6 +1,6 @@
 <?php
 
-namespace Tech101\Webhook;
+namespace Tech101\GitWebhook;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,19 +1,19 @@
 {
-    "name": "tech101/webhook",
+    "name": "tech101/gitwebhook",
     "description": "Package for executing based on trigger",
     "version": "dev-main",
     "license": "MIT",
     "type": "package",
     "autoload": {
         "psr-4": {
-            "Tech101\\Webhook\\": "src/"
+            "Tech101\\GitWebhook\\": "src/"
         }
     },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
-                "Tech101\\Webhook\\WebhookServiceProvider"
+                "Tech101\\GitWebhook\\WebhookServiceProvider"
             ]
         }
     },

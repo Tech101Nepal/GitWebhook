@@ -1,10 +1,8 @@
 <?php
 
-namespace Tech101\Webhook\Test;
+namespace Tech101\GitWebhook\Test;
 
 use Illuminate\Support\Facades\Config;
-use Illuminate\Foundation\Testing\TestCase;
-use Tech101\Webhook\src\Test\CreatesApplication;
 
 class BaseTestCase extends \Orchestra\Testbench\TestCase
 {

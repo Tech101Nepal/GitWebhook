@@ -1,9 +1,9 @@
 <?php
 
-namespace Tech101\Webhook\Test\Unit;
+namespace Tech101\GitWebhook\Test\Unit;
 
-use Tech101\Webhook\Test\BaseTestCase;
-use Tech101\Webhook\WebhookServiceProvider;
+use Tech101\GitWebhook\Test\BaseTestCase;
+use Tech101\GitWebhook\WebhookServiceProvider;
 
 class ServiceProviderTest extends BaseTestCase
 {

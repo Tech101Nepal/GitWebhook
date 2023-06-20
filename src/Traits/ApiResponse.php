@@ -1,6 +1,6 @@
 <?php
 
-namespace Tech101\Webhook\Traits;
+namespace Tech101\GitWebhook\Traits;
 
 use Illuminate\Http\JsonResponse;
 

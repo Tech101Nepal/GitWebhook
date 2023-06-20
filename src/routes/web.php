@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Tech101\Webhook\Http\Controller\WebhookController;
+use Tech101\GitWebhook\Http\Controller\WebhookController;
 
 Route::group(["prefix" => "webhook", "as" => "webhook."], function () {
     Route::group(["prefix" => "gitlab", "as" => "gitlab."], function () {

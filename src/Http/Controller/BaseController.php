@@ -1,10 +1,10 @@
 <?php
 
-namespace Tech101\Webhook\Http\Controller;
+namespace Tech101\GitWebhook\Http\Controller;
 
 use Exception;
 use Illuminate\Http\Request;
-use Tech101\Webhook\Service\Git;
+use Tech101\GitWebhook\Service\Git;
 use Illuminate\Routing\Controller;
 
 class BaseController extends Controller

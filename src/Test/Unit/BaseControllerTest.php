@@ -1,11 +1,11 @@
 <?php
 
-namespace Tech101\Webhook\Test\Unit;
+namespace Tech101\GitWebhook\Test\Unit;
 
 use Illuminate\Http\Request;
-use Tech101\Webhook\Test\BaseTestCase;
-use Tech101\Webhook\Factories\GitlabRequestFactory;
-use Tech101\Webhook\Http\Controller\BaseController;
+use Tech101\GitWebhook\Test\BaseTestCase;
+use Tech101\GitWebhook\Factories\GitlabRequestFactory;
+use Tech101\GitWebhook\Http\Controller\BaseController;
 
 class BaseControllerTest extends BaseTestCase
 {

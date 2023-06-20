@@ -1,8 +1,8 @@
 <?php
 
-namespace Tech101\Webhook\Service;
+namespace Tech101\GitWebhook\Service;
 
-use Tech101\Webhook\Traits\LoggingTrait;
+use Tech101\GitWebhook\Traits\LoggingTrait;
 
 class Git
 {
