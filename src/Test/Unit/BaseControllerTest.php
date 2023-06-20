@@ -4,7 +4,7 @@ namespace Tech101\Webhook\Test\Unit;
 
 use Illuminate\Http\Request;
 use Tech101\Webhook\Test\BaseTestCase;
-use Tech101\Webhook\factories\GitlabRequestFactory;
+use Tech101\Webhook\Factories\GitlabRequestFactory;
 use Tech101\Webhook\Http\Controller\BaseController;
 
 class BaseControllerTest extends BaseTestCase

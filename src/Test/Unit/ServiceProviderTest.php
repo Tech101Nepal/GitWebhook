@@ -2,7 +2,6 @@
 
 namespace Tech101\Webhook\Test\Unit;
 
-use Illuminate\Support\Facades\Route;
 use Tech101\Webhook\Test\BaseTestCase;
 use Tech101\Webhook\WebhookServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tech101\Webhook\factories;
+namespace Tech101\Webhook\Factories;
 
 class GitlabRequestFactory
 {
