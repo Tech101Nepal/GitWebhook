@@ -22,5 +22,7 @@ jobs:
     - name: installing composer dependencies
       run: composer install
       
+    - name: dumploading composer
+      run: composer dump-autoload
     - name: running unit test on the package
       run: ./vendor/bin/phpunit
