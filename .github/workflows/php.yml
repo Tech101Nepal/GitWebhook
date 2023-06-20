@@ -16,13 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: checking composer
-      run: composer --version
-    
-    - name: installing composer dependencies
+    - name: Installing composer 
       run: composer install
-      
-    - name: dumploading composer
-      run: composer dump-autoload
-    - name: running unit test on the package
+    
+    - name: Running the test cases
       run: ./vendor/bin/phpunit
