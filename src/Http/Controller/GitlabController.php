@@ -3,6 +3,7 @@
 namespace Tech101\GitWebhook\Http\Controller;
 
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Tech101\GitWebhook\Service\Git;
@@ -23,7 +24,14 @@ class GitlabController extends Controller
         $this->git = new Git();
     }
 
-    public function mergeRequest(Request $request)
+    /**
+     * Function to trigger webhook based on merge request event
+     *
+     * @param Request $request
+     *
+     * @return JsonResponse
+     */
+    public function mergeRequest(Request $request): JsonResponse
     {
         try {
             $this->validateAll($request);
@@ -42,16 +50,24 @@ class GitlabController extends Controller
         return $this->successResponse([], "Webhook recieved", 200);
     }
 
-    public function tagPush(Request $request)
+    /**
+     * Function to trigger webhook based on tag push event
+     *
+     * @param Request $request
+     *
+     * @return JsonResponse
+     */
+    public function tagPush(Request $request): JsonResponse
     {
         try {
             $this->validateAll($request);
             $this->repository->validateEventType("tag_push");
 
+            dd($this->payload->ref);
             $this->git
                 ->changeDirectory()
                 ->fetch()
-                ->checkoutTag($this->payload->ref);
+                ->checkoutTag(str_replace("refs/tags/", "", $this->payload->ref));
         } catch (Exception $e) {
             return $this->errorResponse($e->getMessage(), $e->getCode());
         }
@@ -59,7 +75,14 @@ class GitlabController extends Controller
         return $this->successResponse([], "Webhook recieved", 200);
     }
 
-    public function validateAll(Request $request)
+    /**
+     * Function to validate the request and the secrete sent
+     *
+     * @param Request $request
+     *
+     * @return void
+     */
+    public function validateAll(Request $request): void
     {
         $this->payload = $this->repository->parseRequest($request);
         $this->repository->validateSecret($request);
