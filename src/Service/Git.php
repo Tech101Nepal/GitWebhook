@@ -36,7 +36,7 @@ class Git
      */
     public function changeDirectory(): self
     {
-        // exec("cd {$this->location}", $this->output);
+        exec("cd {$this->location}", $this->output);
         $this->storeLog();
 
         return $this;
@@ -49,7 +49,7 @@ class Git
      */
     public function fetch(): self
     {
-        // exec("git fetch", $this->output);
+        exec("git fetch", $this->output);
         $this->storeLog();
 
         return $this;
@@ -62,7 +62,7 @@ class Git
      */
     public function reset(): self
     {
-        // exec("git reset --hard", $this->output);
+        exec("git reset --hard", $this->output);
         $this->storeLog();
 
         return $this;
@@ -75,7 +75,7 @@ class Git
      */
     public function pull(): self
     {
-        // exec("git pull origin {$this->defaultBranch}", $this->output);
+        exec("git pull origin {$this->defaultBranch}", $this->output);
         $this->storeLog();
 
         return $this;
@@ -90,7 +90,7 @@ class Git
      */
     public function checkoutTag(string $ref): self
     {
-        // exec("git checkout " . str_replace("refs/tags/", "", $ref), $this->output);
+        exec("git checkout " . str_replace("refs/tags/", "", $ref), $this->output);
         $this->storeLog();
 
         return $this;

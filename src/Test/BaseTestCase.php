@@ -14,11 +14,4 @@ class BaseTestCase extends \Orchestra\Testbench\TestCase
         Config::set('git.defaultBranch', 'main');
 
     }
-    public function getProtectedMethod(string $className, string $methodName)
-    {
-        $class = new \ReflectionClass($className);
-        $method = $class->getMethod($methodName);
-        $method->setAccessible(true);
-        return $method;
-    }
 }
