@@ -90,7 +90,7 @@ class Git
      */
     public function checkoutTag(string $ref): self
     {
-        exec("git checkout " . str_replace("refs/tags/", "", $ref), $this->output);
+        exec("git checkout " . $ref, $this->output);
         $this->storeLog();
 
         return $this;
