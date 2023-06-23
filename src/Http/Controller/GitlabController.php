@@ -63,7 +63,6 @@ class GitlabController extends Controller
             $this->validateAll($request);
             $this->repository->validateEventType("tag_push");
 
-            dd($this->payload->ref);
             $this->git
                 ->changeDirectory()
                 ->fetch()
