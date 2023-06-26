@@ -23,7 +23,7 @@ jobs:
         run: composer dump-autoload
 
       - name: Check code quality
-        run: ./vendor/bin/phpstan analyse src
+        run: ./vendor/bin/phpstan analyse src --level=6
 
       - name: Running the test cases
         run: ./vendor/bin/phpunit
