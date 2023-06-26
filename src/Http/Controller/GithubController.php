@@ -35,7 +35,7 @@ class GithubController extends Controller
     {
         try {
             $this->validateAll($request);
-            $this->repository->validateEventType("merge");
+            $this->repository->validateEventType("pull_request");
 
             $this->git
                 ->changeDirectory()
@@ -70,7 +70,7 @@ class GithubController extends Controller
             return $this->errorResponse($e->getMessage(), $e->getCode());
         }
 
-        return $this->successResponse([], "Webhook Recieved", 200);
+        return $this->successResponse([], "Webhook recieved", 200);
     }
 
     /**
