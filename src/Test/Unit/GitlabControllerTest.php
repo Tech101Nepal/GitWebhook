@@ -9,7 +9,7 @@ use Tech101\GitWebhook\Http\Controller\GitlabController;
 use Tech101\GitWebhook\App\Repositories\GitlabRepository;
 
 class GitlabControllerTest extends BaseTestCase
- {
+{
     /**
      * Test when merge request hook is called with invalid request
      *
@@ -17,7 +17,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenMergeRequestHookIsCalledWithInvalidRequest()
     {
-        $webhookController = new GitlabController(new GitlabRepository);
+        $webhookController = new GitlabController(new GitlabRepository());
         $request = new Request([]);
 
         $result = $webhookController->mergeRequest($request);
@@ -37,7 +37,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenMergeRequestHookIsCalledWithInvalidSecret()
     {
-        $webhookController = new GitlabController(new GitlabRepository);
+        $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->mergeRequestData("merge_request", "merged");
         $request = new Request(content: json_encode($requestData));
@@ -60,7 +60,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenMergeRequestHookIsCalledWithInvalidEvent()
     {
-        $webhookController = new GitlabController(new GitlabRepository);
+        $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->mergeRequestData("invalidEventType", "merged");
         $request = new Request(content: json_encode($requestData));
@@ -84,7 +84,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenMergeRequestHookIsCalledWithInvalidEventState()
     {
-        $webhookController = new GitlabController(new GitlabRepository);
+        $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->mergeRequestData("merge_request", "not_merged");
 
@@ -107,7 +107,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenMergeRequestHookIsCalledWithValidRequest()
     {
-        $controller =  new GitlabController(new GitlabRepository);
+        $controller =  new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->mergeRequestData("merge_request", "merged");
 
@@ -129,7 +129,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenTagPushHookIsCalledWithInvalidRequest()
     {
-        $controller = new GitlabController(new GitlabRepository);
+        $controller = new GitlabController(new GitlabRepository());
         $request = new Request([]);
 
         $result = $controller->tagPush($request);
@@ -149,7 +149,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenTagPushHookIsCalledWithInvalidSecret()
     {
-        $controller = new GitlabController(new GitlabRepository);
+        $controller = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->tagRequestData("tag_request", "v1");
         $request = new Request(content: json_encode($requestData));
@@ -172,7 +172,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenTagPushHookIsCalledWithInvalidEventType()
     {
-        $controller = new GitlabController(new GitlabRepository);
+        $controller = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->tagRequestData("invalidEventType", "v1");
         $request = new Request(content: json_encode($requestData));
@@ -196,7 +196,7 @@ class GitlabControllerTest extends BaseTestCase
      */
     public function testWhenTagPushHookIsCalledWithValidRequest()
     {
-        $controller =  new GitlabController(new GitlabRepository);
+        $controller =  new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
         $requestData = $factory->tagRequestData("tag_push", "v1");
 

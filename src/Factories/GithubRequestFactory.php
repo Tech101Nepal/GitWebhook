@@ -41,7 +41,7 @@ class GithubRequestFactory
         return [$contentJson, $signature];
     }
 
-    function tagCreateData($tagname, $ref_type): array
+    public function tagCreateData($tagname, $ref_type): array
     {
         $content = [
             "ref" => $tagname,

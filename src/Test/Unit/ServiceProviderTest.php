@@ -7,6 +7,9 @@ use Tech101\GitWebhook\WebhookServiceProvider;
 
 class ServiceProviderTest extends BaseTestCase
 {
+    /**
+     * Testing WebhookServiceProvider class
+     */
     public function testWebhookServiceProviderClass()
     {
         $provider = new WebhookServiceProvider($this->app);
@@ -14,6 +17,9 @@ class ServiceProviderTest extends BaseTestCase
         $this->assertInstanceOf(WebhookServiceProvider::class, $provider);
     }
 
+    /**
+     * Testing WebhookServiceProvider class boot method
+     */
     public function testBootMethodWorks()
     {
         $provider = new WebhookServiceProvider($this->app);
@@ -22,6 +28,9 @@ class ServiceProviderTest extends BaseTestCase
         $this->assertTrue(true);
     }
 
+    /**
+     * Testing WebhookServiceProvider class register method
+     */
     public function testRegisterMethodWorks()
     {
         $provider = new WebhookServiceProvider($this->app);

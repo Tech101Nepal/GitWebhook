@@ -115,7 +115,7 @@ class GithubRepositoryTest extends BaseTestCase
     }
 
     /**
-     * test request validation is for tag creation
+     * Test request validation is for tag creation
      *
      * @return void
      */
@@ -134,7 +134,7 @@ class GithubRepositoryTest extends BaseTestCase
 
 
     /**
-     * test request vaklidation is for tag creation
+     * Test request validation is for tag creation
      *
      * @return void
      */
@@ -150,5 +150,16 @@ class GithubRepositoryTest extends BaseTestCase
         $this->expectExceptionMessage("Invalid event type. Expected ref_type as tag");
 
         $repository->validateTagEvent($request);
+    }
+
+    /**
+     * Test validateEventState blank method
+     */
+    public function testvalidateEventMethod()
+    {
+        $repository = new GithubRepository();
+        $repository->validateEventState("nothing");
+
+        $this->expectNotToPerformAssertions();
     }
 }

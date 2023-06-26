@@ -11,15 +11,14 @@ use Tech101\GitWebhook\Factories\GithubRequestFactory;
 
 class GithubControllerTest extends BaseTestCase
 {
-
     /**
      * Test when pull request hook is called with invalid request
      *
      * @return void
      */
-    function testPullRequestHookIsCalledWithInvalidRequest()
+    public function testPullRequestHookIsCalledWithInvalidRequest()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
 
         $request = new Request([]);
 
@@ -40,7 +39,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenPullRequestHookIsCalledWithInvalidSignature()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
@@ -63,7 +62,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenPullRequestHookIsCalledWithInvalidSecret()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
@@ -87,7 +86,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenPullRequestHookIsCalledWithValidRequest()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
@@ -108,9 +107,9 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    function testTagCreateHookIsCalledWithInvalidRequest()
+    public function testTagCreateHookIsCalledWithInvalidRequest()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
 
         $request = new Request([]);
 
@@ -130,7 +129,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenCreateTagHookIsCalledWithInvalidSignature()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->tagCreateData("v1", "tag");
         $request = new Request(array($requestData), content: $requestData);
@@ -153,7 +152,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenTagCreateHookIsCalledWithInvalidSecret()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->tagCreateData("v1", "tag");
         $request = new Request(array($requestData), content: $requestData);
@@ -176,7 +175,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenTagCreateHookIsCalledWithInvalidTagRef()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->tagCreateData("v1", "invalid");
         $request = new Request(array($requestData), content: $requestData);
@@ -199,7 +198,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenTagCreateHookIsCalledWithInvalidTagRequestData()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->pullRequestData(["tag"]);
         $request = new Request(array($requestData), content: $requestData);
@@ -222,7 +221,7 @@ class GithubControllerTest extends BaseTestCase
      */
     public function testWhenTagCreateHookIsCalledWithValidRequestData()
     {
-        $webhookController = new GithubController(new GithubRepository);
+        $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->tagCreateData("v1", "tag");
         $request = new Request(array($requestData), content: $requestData);

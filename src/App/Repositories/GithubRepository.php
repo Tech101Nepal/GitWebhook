@@ -30,7 +30,7 @@ class GithubRepository implements GitInterface
         $signature = $request->header('X-Hub-Signature');
         $payload = $request->getContent();
 
-        if (strpos($signature, "sha1=") !== 0 ) {
+        if (strpos($signature, "sha1=") !== 0) {
             throw new Exception("Invalid signature.", 401);
         }
 

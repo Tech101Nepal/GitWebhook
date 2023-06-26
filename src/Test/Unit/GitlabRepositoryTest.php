@@ -94,7 +94,7 @@ class GitlabRepositoryTest extends BaseTestCase
     }
 
     /**
-     * test event type when given valid event from the request
+     * Test event type when given valid event from the request
      *
      * @return void
      */
@@ -112,7 +112,7 @@ class GitlabRepositoryTest extends BaseTestCase
     }
 
      /**
-     * test event state when given invalid state from the request
+     * Test event state when given invalid state from the request
      *
      * @return void
      */
@@ -131,7 +131,7 @@ class GitlabRepositoryTest extends BaseTestCase
     }
 
     /**
-     * test event state when given valid state from the request
+     * Test event state when given valid state from the request
      *
      * @return void
      */
@@ -147,6 +147,4 @@ class GitlabRepositoryTest extends BaseTestCase
         $this->addToAssertionCount(1);
         $repository->validateEventState("merged");
     }
-
-
 }
