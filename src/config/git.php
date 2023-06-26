@@ -9,4 +9,5 @@ return [
      * Stores the webhook token set in the env
      */
     "gitlabWebhookToken" => env("GITLAB_WEBHOOK_TOKEN"),
+    "githubWebhookToken" => env("GITHUB_WEBHOOK_TOKEN")
 ];
