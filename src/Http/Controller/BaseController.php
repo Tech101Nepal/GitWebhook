@@ -4,14 +4,15 @@ namespace Tech101\GitWebhook\Http\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Tech101\GitWebhook\Service\Git;
 use Tech101\GitWebhook\Traits\ApiResponse;
 
 class BaseController extends Controller
 {
     use ApiResponse;
 
-    public $repository;
-    public $git;
+    public object $repository;
+    public Git $git;
     public object $payload;
 
     /**
@@ -44,9 +45,11 @@ class BaseController extends Controller
     /**
      * Function to git tag checkout
      *
+     * @param string $ref
+     *
      * @return void
      */
-    public function gitCheckout($ref): void
+    public function gitCheckout(string $ref): void
     {
         $this->git
             ->changeDirectory()
