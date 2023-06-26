@@ -11,6 +11,7 @@ class BaseTestCase extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         Config::set('git.gitlabWebhookToken', 'token');
+        Config::set('git.githubWebhookToken', '123');
         Config::set('git.defaultBranch', 'main');
 
     }
