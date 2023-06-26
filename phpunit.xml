@@ -9,6 +9,7 @@
   <php>
     <env name="GITLAB_WEBHOOK_TOKEN" value="token"/>
     <env name="DEFAULT_BRANCH" value="main"/>
+    <env name="GITHUB_WEBHOOK_TOKEN" value="token"/>
   </php>
   <coverage/>
   <source>
