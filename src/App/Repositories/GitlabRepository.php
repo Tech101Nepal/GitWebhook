@@ -5,18 +5,9 @@ namespace Tech101\GitWebhook\App\Repositories;
 use Exception;
 use Illuminate\Http\Request;
 use Tech101\GitWebhook\App\Interface\GitInterface;
-use Tech101\GitWebhook\Service\Git;
 
-class GitlabRepository implements GitInterface
+class GitlabRepository extends BaseRepository implements GitInterface
 {
-    public ?object $payload;
-    public $git;
-
-    public function __construct()
-    {
-        $this->payload = null;
-        $this->git = new Git();
-    }
 
     /**
      * Check the token that comes with the request matches the project's token

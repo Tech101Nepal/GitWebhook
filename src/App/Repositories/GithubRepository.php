@@ -4,20 +4,10 @@ namespace Tech101\GitWebhook\App\Repositories;
 
 use Exception;
 use Illuminate\Http\Request;
-use Tech101\GitWebhook\Service\Git;
 use Tech101\GitWebhook\App\Interface\GitInterface;
 
-class GithubRepository implements GitInterface
+class GithubRepository extends BaseRepository implements GitInterface
 {
-    public ?object $payload;
-    public $git;
-
-    public function __construct()
-    {
-        $this->payload = null;
-        $this->git = new Git();
-    }
-
     /**
      * Checks the secret matches with the request secret
      *
@@ -48,7 +38,7 @@ class GithubRepository implements GitInterface
      *
      * @param Request $request
      *
-     * @return void
+     * @return object
      */
     public function parseRequest(Request $request): object
     {
@@ -68,9 +58,9 @@ class GithubRepository implements GitInterface
     /**
      * Checks the event type is the required event type
      *
-     * @param Request $request
+     * @param string $type
      *
-     * @return JsonResponse
+     * @return void
      */
     public function validateEventType(string $type): void
     {
