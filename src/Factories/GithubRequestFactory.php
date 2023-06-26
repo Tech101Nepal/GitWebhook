@@ -4,6 +4,13 @@ namespace Tech101\GitWebhook\Factories;
 
 class GithubRequestFactory
 {
+    /**
+     * Generate dummy data for github pull request
+     *
+     * @param array<string> $events
+     *
+     * @return array<string>
+     */
     public function pullRequestData(array $events): array
     {
         $content = [
@@ -41,7 +48,15 @@ class GithubRequestFactory
         return [$contentJson, $signature];
     }
 
-    public function tagCreateData($tagname, $ref_type): array
+    /**
+     * Generates dummy data for github tag request
+     *
+     * @param string $tagname
+     * @param string $ref_type
+     *
+     * @return array<string>
+     */
+    public function tagCreateData(string $tagname, string $ref_type): array
     {
         $content = [
             "ref" => $tagname,

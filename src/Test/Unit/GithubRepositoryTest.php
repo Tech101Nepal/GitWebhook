@@ -122,13 +122,13 @@ class GithubRepositoryTest extends BaseTestCase
     public function testTagEventWithInvalidData(): void
     {
         $factory = new GithubRequestFactory();
-        [$requestData, $secret] = $factory->pullRequestData(["something"]);
-        $payload = json_encode($requestData);
+        $requestData = $factory->pullRequestData(["something"])[0];
 
         $this->expectExceptionCode(200);
         $this->expectExceptionMessage("Invalid tag request.");
 
-        $repository = new GithubRepository($payload);
+        $repository = new GithubRepository();
+        $repository->payload = json_decode($requestData);
         $repository->validateTagEvent();
     }
 
@@ -149,7 +149,7 @@ class GithubRepositoryTest extends BaseTestCase
         $this->expectExceptionCode(200);
         $this->expectExceptionMessage("Invalid event type. Expected ref_type as tag");
 
-        $repository->validateTagEvent($request);
+        $repository->validateTagEvent();
     }
 
     /**

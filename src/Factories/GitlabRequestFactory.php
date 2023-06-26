@@ -4,7 +4,15 @@ namespace Tech101\GitWebhook\Factories;
 
 class GitlabRequestFactory
 {
-    public function mergeRequestData($object_kind, $state): array
+    /**
+     * Generates dummy data for gitlab request merge
+     *
+     * @param string $object_kind
+     * @param string $state
+     *
+     * @return array<string>
+     */
+    public function mergeRequestData(string $object_kind, string $state): array
     {
         return [
             "object_kind" => $object_kind,
@@ -27,7 +35,15 @@ class GitlabRequestFactory
         ];
     }
 
-    public function tagRequestData($object_kind, $ref): array
+    /**
+     * Generates dummy data for gitlab tag request
+     *
+     * @param string $object_kind
+     * @param string $ref
+     *
+     * @return array<string>
+     */
+    public function tagRequestData(string $object_kind, string $ref): array
     {
         return [
             "object_kind" => $object_kind,
