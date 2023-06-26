@@ -23,7 +23,7 @@ class BaseController extends Controller
      */
     public function validateAll(Request $request): void
     {
-        $this->repository->parseRequest($request);
+        $this->payload = $this->repository->parseRequest($request);
         $this->repository->validateSecret($request);
     }
 
