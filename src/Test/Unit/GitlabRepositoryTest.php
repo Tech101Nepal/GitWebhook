@@ -15,7 +15,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testRequestValidationWithInvalidData()
+    public function testRequestValidationWithInvalidData(): void
     {
         $repository = new GitlabRepository();
         $request = new Request();
@@ -30,7 +30,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testRequestValidationWithValidData()
+    public function testRequestValidationWithValidData(): void
     {
         $repository = new GitlabRepository();
         $factory = new GitlabRequestFactory();
@@ -46,7 +46,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTokenValidationWhenGivenInvalidSecret()
+    public function testTokenValidationWhenGivenInvalidSecret(): void
     {
         $repository = new GitlabRepository();
 
@@ -63,7 +63,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTokenValidationWhenGivenValidSecret()
+    public function testTokenValidationWhenGivenValidSecret(): void
     {
         $repository = new GitlabRepository();
 
@@ -79,7 +79,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testEventTypeWhenGivenInavlidEventFromTheRequest()
+    public function testEventTypeWhenGivenInavlidEventFromTheRequest(): void
     {
         $repository = new GitlabRepository();
         $factory = new GitlabRequestFactory();
@@ -98,7 +98,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testEventTypeWhenGivenValidKindFromTheRequest()
+    public function testEventTypeWhenGivenValidKindFromTheRequest(): void
     {
         $repository = new GitlabRepository();
         $factory = new GitlabRequestFactory();
@@ -116,7 +116,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testEventStateWhenGivenInvalidStateFromTheRequest()
+    public function testEventStateWhenGivenInvalidStateFromTheRequest(): void
     {
         $repository = new GitlabRepository();
         $factory = new GitlabRequestFactory();
@@ -135,7 +135,7 @@ class GitlabRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testEventStateWhenGivenValidStateFromTheRequest()
+    public function testEventStateWhenGivenValidStateFromTheRequest(): void
     {
         $repository = new GitlabRepository();
         $factory = new GitlabRequestFactory();

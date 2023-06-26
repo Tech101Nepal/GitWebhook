@@ -29,6 +29,8 @@ class BaseController extends Controller
 
     /**
      * Function to git pull
+     *
+     * @return void
      */
     public function gitPull(): void
     {
@@ -41,6 +43,8 @@ class BaseController extends Controller
 
     /**
      * Function to git tag checkout
+     *
+     * @return void
      */
     public function gitCheckout($ref): void
     {

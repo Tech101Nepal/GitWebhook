@@ -8,7 +8,7 @@ use Tech101\GitWebhook\App\Interface\GitRepositoryInterface;
 
 class WebhookServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 
@@ -16,7 +16,7 @@ class WebhookServiceProvider extends ServiceProvider
         $this->app->make('config')->set('logging.channels.gitlog', config('gitlog.gitlog'));
     }
 
-    public function register()
+    public function register(): void
     {
         $this->publishes([__DIR__ . '/config/git.php' => config_path('git.php')]);
         $this->app->bind(GitRepositoryInterface::class, GitlabRepository::class);

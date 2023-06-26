@@ -15,7 +15,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenMergeRequestHookIsCalledWithInvalidRequest()
+    public function testWhenMergeRequestHookIsCalledWithInvalidRequest(): void
     {
         $webhookController = new GitlabController(new GitlabRepository());
         $request = new Request([]);
@@ -35,7 +35,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenMergeRequestHookIsCalledWithInvalidSecret()
+    public function testWhenMergeRequestHookIsCalledWithInvalidSecret(): void
     {
         $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -58,7 +58,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenMergeRequestHookIsCalledWithInvalidEvent()
+    public function testWhenMergeRequestHookIsCalledWithInvalidEvent(): void
     {
         $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -82,7 +82,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenMergeRequestHookIsCalledWithInvalidEventState()
+    public function testWhenMergeRequestHookIsCalledWithInvalidEventState(): void
     {
         $webhookController = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -105,7 +105,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenMergeRequestHookIsCalledWithValidRequest()
+    public function testWhenMergeRequestHookIsCalledWithValidRequest(): void
     {
         $controller =  new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -127,7 +127,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagPushHookIsCalledWithInvalidRequest()
+    public function testWhenTagPushHookIsCalledWithInvalidRequest(): void
     {
         $controller = new GitlabController(new GitlabRepository());
         $request = new Request([]);
@@ -147,7 +147,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagPushHookIsCalledWithInvalidSecret()
+    public function testWhenTagPushHookIsCalledWithInvalidSecret(): void
     {
         $controller = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -170,7 +170,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagPushHookIsCalledWithInvalidEventType()
+    public function testWhenTagPushHookIsCalledWithInvalidEventType(): void
     {
         $controller = new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();
@@ -194,7 +194,7 @@ class GitlabControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagPushHookIsCalledWithValidRequest()
+    public function testWhenTagPushHookIsCalledWithValidRequest(): void
     {
         $controller =  new GitlabController(new GitlabRepository());
         $factory = new GitlabRequestFactory();

@@ -9,8 +9,10 @@ class ServiceProviderTest extends BaseTestCase
 {
     /**
      * Testing WebhookServiceProvider class
+     *
+     * @return void
      */
-    public function testWebhookServiceProviderClass()
+    public function testWebhookServiceProviderClass(): void
     {
         $provider = new WebhookServiceProvider($this->app);
 
@@ -19,8 +21,10 @@ class ServiceProviderTest extends BaseTestCase
 
     /**
      * Testing WebhookServiceProvider class boot method
+     *
+     * @return void
      */
-    public function testBootMethodWorks()
+    public function testBootMethodWorks(): void
     {
         $provider = new WebhookServiceProvider($this->app);
         $provider->boot();
@@ -30,8 +34,10 @@ class ServiceProviderTest extends BaseTestCase
 
     /**
      * Testing WebhookServiceProvider class register method
+     *
+     * @return void
      */
-    public function testRegisterMethodWorks()
+    public function testRegisterMethodWorks(): void
     {
         $provider = new WebhookServiceProvider($this->app);
         $provider->register();

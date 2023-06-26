@@ -15,7 +15,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testRequestValidationWithInvalidData()
+    public function testRequestValidationWithInvalidData(): void
     {
         $repository = new GithubRepository();
         $request = new Request();
@@ -31,7 +31,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testRequestValidationWithValidData()
+    public function testRequestValidationWithValidData(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -47,7 +47,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTokenValidationWhenGivenInvalidSecret()
+    public function testTokenValidationWhenGivenInvalidSecret(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -65,7 +65,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTokenValidationWhenGivenInvalidSignature()
+    public function testTokenValidationWhenGivenInvalidSignature(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -83,7 +83,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTokenValidationWhenGivenValidSecret()
+    public function testTokenValidationWhenGivenValidSecret(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -100,7 +100,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testEventTypeWhenGivenInavlidEventFromTheRequest()
+    public function testEventTypeWhenGivenInavlidEventFromTheRequest(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -119,7 +119,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTagEventWithInvalidData()
+    public function testTagEventWithInvalidData(): void
     {
         $factory = new GithubRequestFactory();
         [$requestData, $secret] = $factory->pullRequestData(["something"]);
@@ -138,7 +138,7 @@ class GithubRepositoryTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTagEventWithInvalidRef()
+    public function testTagEventWithInvalidRef(): void
     {
         $repository = new GithubRepository();
         $factory = new GithubRequestFactory();
@@ -154,8 +154,10 @@ class GithubRepositoryTest extends BaseTestCase
 
     /**
      * Test validateEventState blank method
+     *
+     * @return void
      */
-    public function testvalidateEventMethod()
+    public function testvalidateEventMethod(): void
     {
         $repository = new GithubRepository();
         $repository->validateEventState("nothing");

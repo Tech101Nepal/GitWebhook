@@ -16,7 +16,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testPullRequestHookIsCalledWithInvalidRequest()
+    public function testPullRequestHookIsCalledWithInvalidRequest(): void
     {
         $webhookController = new GithubController(new GithubRepository());
 
@@ -37,7 +37,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenPullRequestHookIsCalledWithInvalidSignature()
+    public function testWhenPullRequestHookIsCalledWithInvalidSignature(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -60,7 +60,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenPullRequestHookIsCalledWithInvalidSecret()
+    public function testWhenPullRequestHookIsCalledWithInvalidSecret(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -84,7 +84,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenPullRequestHookIsCalledWithValidRequest()
+    public function testWhenPullRequestHookIsCalledWithValidRequest(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -107,7 +107,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testTagCreateHookIsCalledWithInvalidRequest()
+    public function testTagCreateHookIsCalledWithInvalidRequest(): void
     {
         $webhookController = new GithubController(new GithubRepository());
 
@@ -127,7 +127,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenCreateTagHookIsCalledWithInvalidSignature()
+    public function testWhenCreateTagHookIsCalledWithInvalidSignature(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -150,7 +150,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagCreateHookIsCalledWithInvalidSecret()
+    public function testWhenTagCreateHookIsCalledWithInvalidSecret(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -173,7 +173,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagCreateHookIsCalledWithInvalidTagRef()
+    public function testWhenTagCreateHookIsCalledWithInvalidTagRef(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -196,7 +196,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagCreateHookIsCalledWithInvalidTagRequestData()
+    public function testWhenTagCreateHookIsCalledWithInvalidTagRequestData(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
@@ -219,7 +219,7 @@ class GithubControllerTest extends BaseTestCase
      *
      * @return void
      */
-    public function testWhenTagCreateHookIsCalledWithValidRequestData()
+    public function testWhenTagCreateHookIsCalledWithValidRequestData(): void
     {
         $webhookController = new GithubController(new GithubRepository());
         $factory = new GithubRequestFactory();
