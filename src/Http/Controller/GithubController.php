@@ -5,19 +5,11 @@ namespace Tech101\GitWebhook\Http\Controller;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Tech101\GitWebhook\Service\Git;
-use Tech101\GitWebhook\Traits\ApiResponse;
 use Tech101\GitWebhook\App\Repositories\GithubRepository;
 
-class GithubController extends Controller
+class GithubController extends BaseController
 {
-    use ApiResponse;
-
-    private $repository;
-    private $git;
-    private object $payload;
-
     public function __construct(GithubRepository $githubRepository)
     {
         $this->repository = $githubRepository;
@@ -37,11 +29,7 @@ class GithubController extends Controller
             $this->validateAll($request);
             $this->repository->validateEventType("pull_request");
 
-            $this->git
-                ->changeDirectory()
-                ->fetch()
-                ->reset()
-                ->pull();
+            $this->gitPull();
         } catch (Exception $e) {
             return $this->errorResponse($e->getMessage(), $e->getCode());
         }
@@ -62,27 +50,11 @@ class GithubController extends Controller
             $this->validateAll($request);
             $this->repository->validateTagEvent();
 
-            $this->git
-                ->changeDirectory()
-                ->fetch()
-                ->checkoutTag($this->payload->ref);
+            $this->gitCheckout($this->payload->ref);
         } catch (Exception $e) {
             return $this->errorResponse($e->getMessage(), $e->getCode());
         }
 
         return $this->successResponse([], "Webhook recieved", 200);
-    }
-
-    /**
-     * Function to validate request and secret sent
-     *
-     * @param Request $request
-     *
-     * @return void
-     */
-    public function validateAll(Request $request): void
-    {
-        $this->payload = $this->repository->parseRequest($request);
-        $this->repository->validateSecret($request);
     }
 }
