@@ -28,12 +28,15 @@ class GithubRepository implements GitInterface
     public function validateSecret(Request $request): void
     {
         $signature = $request->header('X-Hub-Signature');
-        $payload = json_encode(json_decode($request->getContent()));
         $payload = $request->getContent();
+
+        if (strpos($signature, "sha1=") !== 0 ) {
+            throw new Exception("Invalid signature.", 401);
+        }
 
         list($algo, $recievedSignature) = explode('=', $signature, 2);
 
-        $expected_signature = hash_hmac($algo, $payload, config('git.gitlabWebhookToken'));
+        $expected_signature = hash_hmac($algo, $payload, config('git.githubWebhookToken'));
 
         if ($recievedSignature !== $expected_signature) {
             throw new Exception("Unauthorized.", 401);
@@ -84,12 +87,16 @@ class GithubRepository implements GitInterface
     /**
      * Checks if the event is tag event
      *
-     * @param Request $request
-     *
      * @return JsonResponse
      */
     public function validateTagEvent()
     {
+        if (!isset($this->payload->ref_type)) {
+            throw new Exception(
+                "Invalid tag request.",
+                200
+            );
+        }
         if ($this->payload->ref_type != "tag") {
             throw new Exception(
                 "Invalid event type. Expected ref_type as tag",
