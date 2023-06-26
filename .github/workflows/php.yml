@@ -2,9 +2,9 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -14,13 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Installing composer
-      run: composer install
+      - name: Installing composer
+        run: composer install
 
-    - name: Dump autoload
-      run: composer dump-autoload
+      - name: Dump autoload
+        run: composer dump-autoload
 
-    - name: Running the test cases
-      run: ./vendor/bin/phpunit
+      - name: Check code quality
+        run: ./vendor/bin/phpstan analyse src
+
+      - name: Running the test cases
+        run: ./vendor/bin/phpunit

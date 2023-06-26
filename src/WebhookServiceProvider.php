@@ -3,8 +3,6 @@
 namespace Tech101\GitWebhook;
 
 use Illuminate\Support\ServiceProvider;
-use Tech101\GitWebhook\App\GitRepository\GitlabRepository;
-use Tech101\GitWebhook\App\Interface\GitRepositoryInterface;
 
 class WebhookServiceProvider extends ServiceProvider
 {
@@ -19,6 +17,5 @@ class WebhookServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->publishes([__DIR__ . '/config/git.php' => config_path('git.php')]);
-        $this->app->bind(GitRepositoryInterface::class, GitlabRepository::class);
     }
 }

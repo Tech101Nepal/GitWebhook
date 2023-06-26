@@ -87,9 +87,9 @@ class GithubRepository implements GitInterface
     /**
      * Checks if the event is tag event
      *
-     * @return JsonResponse
+     * @return void
      */
-    public function validateTagEvent()
+    public function validateTagEvent(): void
     {
         if (!isset($this->payload->ref_type)) {
             throw new Exception(

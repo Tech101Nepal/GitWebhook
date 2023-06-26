@@ -18,7 +18,8 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^8.5"
+        "orchestra/testbench": "^8.5",
+        "phpstan/phpstan": "^1.10"
     },
     "require": {
         "laravel/framework": "^10.13"
