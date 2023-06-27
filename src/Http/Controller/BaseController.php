@@ -11,6 +11,11 @@ class BaseController extends Controller
 {
     use ApiResponse;
 
+    /**
+     * @var object $repository
+     * @var Git $git
+     * @var object $payload
+     */
     public object $repository;
     public Git $git;
     public object $payload;

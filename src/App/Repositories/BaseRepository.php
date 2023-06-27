@@ -8,6 +8,10 @@ use Tech101\GitWebhook\App\Interface\GitInterface;
 
 class BaseRepository
 {
+    /**
+     * @var object $payload
+     * @var Git $git
+     */
     public ?object $payload;
     public Git $git;
 

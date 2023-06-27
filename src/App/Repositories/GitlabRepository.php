@@ -8,7 +8,6 @@ use Tech101\GitWebhook\App\Interface\GitInterface;
 
 class GitlabRepository extends BaseRepository implements GitInterface
 {
-
     /**
      * Check the token that comes with the request matches the project's token
      *
