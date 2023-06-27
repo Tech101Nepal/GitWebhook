@@ -1,7 +1,7 @@
 {
     "name": "tech101/gitwebhook",
     "description": "Package for executing based on trigger",
-    "version": "v1.1.0.0",
+    "version": "v1.1",
     "license": "MIT",
     "type": "package",
     "autoload": {
