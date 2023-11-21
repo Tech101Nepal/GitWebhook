@@ -8,6 +8,8 @@ use Tech101\GitWebhook\App\Interface\GitInterface;
 
 class GithubRepository extends BaseRepository implements GitInterface
 {
+    public ?string $event;
+
     /**
      * Checks the secret matches with the request secret
      *
@@ -43,6 +45,11 @@ class GithubRepository extends BaseRepository implements GitInterface
     public function parseRequest(Request $request): object
     {
         $this->payload = json_decode($request->getContent());
+        $this->event = $request->header("X-GitHub-Event");
+
+        if (!$this->event) {
+            throw new Exception("Invalid request.", 419);
+        }
 
         if (!$this->payload) {
             throw new Exception("Invalid request.", 419);
@@ -64,13 +71,11 @@ class GithubRepository extends BaseRepository implements GitInterface
      */
     public function validateEventType(string $type): void
     {
-        if ($events = $this->payload->hook->events) {
-            if (!in_array($type, $events)) {
-                throw new Exception(
-                    "Invalid event type. Expected {$type} but found " . implode(", ", $events),
-                    200
-                );
-            }
+        if ($this->event != $type) {
+            throw new Exception(
+                "Invalid event type. Expected {$type} but found $this->event",
+                200
+            );
         }
     }
 
