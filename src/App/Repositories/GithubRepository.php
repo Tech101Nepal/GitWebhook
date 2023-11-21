@@ -45,12 +45,10 @@ class GithubRepository extends BaseRepository implements GitInterface
     public function parseRequest(Request $request): object
     {
         $this->payload = json_decode($request->getContent());
-        $this->event = $request->header("X-GitHub-Event");
 
-        if (!$this->event) {
-            throw new Exception("Invalid request.", 419);
+        if ($request->hasHeader("X-GitHub-Event")) {
+            $this->event = $request->header("X-GitHub-Event");
         }
-
         if (!$this->payload) {
             throw new Exception("Invalid request.", 419);
         }
