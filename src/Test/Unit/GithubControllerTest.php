@@ -44,6 +44,7 @@ class GithubControllerTest extends BaseTestCase
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
         $request->headers->set('X-Hub-Signature', "invalid=");
+        $request->headers->set('X-GitHub-Event', 'pull_request');
 
         $result = $webhookController->pullRequest($request);
 
@@ -67,6 +68,7 @@ class GithubControllerTest extends BaseTestCase
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
         $request->headers->set('X-Hub-Signature', "sha1=");
+        $request->headers->set('X-GitHub-Event', 'pull_request');
 
         $result = $webhookController->pullRequest($request);
 
@@ -91,6 +93,7 @@ class GithubControllerTest extends BaseTestCase
         [$requestData, $secret] = $factory->pullRequestData(["pull_request"]);
         $request = new Request(array($requestData), content: $requestData);
         $request->headers->set('X-Hub-Signature', $secret);
+        $request->headers->set('X-GitHub-Event', 'pull_request');
 
         $result = $webhookController->pullRequest($request);
 
@@ -134,6 +137,7 @@ class GithubControllerTest extends BaseTestCase
         [$requestData, $secret] = $factory->tagCreateData("v1", "tag");
         $request = new Request(array($requestData), content: $requestData);
         $request->headers->set('X-Hub-Signature', "invalid=");
+        $request->headers->set('X-GitHub-Event', 'tag');
 
         $result = $webhookController->tagCreate($request);
 

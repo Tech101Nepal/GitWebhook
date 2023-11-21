@@ -108,6 +108,7 @@ class GithubRepositoryTest extends BaseTestCase
         [$requestData, $secret] = $factory->pullRequestData(["invalid"]);
         $request = new Request(array($requestData), content: $requestData);
         $repository->payload = json_decode($request->getContent());
+        $repository->event = "invalid";
 
         $this->expectExceptionCode(200);
         $this->expectExceptionMessage("Invalid event type. Expected pull_request but found invalid");
